@@ -6,23 +6,26 @@ export default function Navbar() {
   return (
     <nav className="navbar-custom">
       <Link to="/" className="navbar-brand">
-        🏥 Smart Patient Dashboard
+        <span className="brand-icon">🏥</span>
+        <span className="brand-text">
+          Telemedicine Patient <span className="brand-highlight">Dashboard</span>
+        </span>
       </Link>
       <div className="nav-links">
-        <Link to="/" className={location.pathname === "/" ? "active" : ""}>
-          Home
+        <Link to="/" className={`nav-link-item ${location.pathname === "/" ? "active" : ""}`}>
+          <span className="nav-icon">🏠</span> Home
         </Link>
         <Link
           to="/register"
-          className={location.pathname === "/register" ? "active" : ""}
+          className={`nav-link-item ${location.pathname === "/register" ? "active" : ""}`}
         >
-          Register
+          <span className="nav-icon">📝</span> Register
         </Link>
         <Link
           to="/patients"
-          className={location.pathname === "/patients" ? "active" : ""}
+          className={`nav-link-item ${location.pathname === "/patients" ? "active" : ""}`}
         >
-          Patients List
+          <span className="nav-icon">📋</span> Patients
         </Link>
       </div>
     </nav>
